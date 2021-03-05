@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Ethnicity">Ethnicity
+            <item>American Indian/Alaskan Native</item>
+            <item>Asian</item>
+            <item>Black/African American</item>
+            <item>Hispanic/Latino</item>
+            <item>Native Hawaiian/Pacific Islander</item>
+            <item>White</item>
+    </string-array>
+    <string-array name="Gender">Gender
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="YNU">Gender
+        <item>No</item>
+        <item>Yes</item>
+        <item>Unknown</item>
+    </string-array>
+    <string-array name="YN">Gender
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+</resources>

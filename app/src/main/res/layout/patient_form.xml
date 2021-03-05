@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Patient Form" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ageText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:lineSpacingExtra="36sp"
+                android:lineSpacingMultiplier="2"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text="What is your age?"
+                app:lineHeight="20sp" />
+
+            <TextView
+                android:id="@+id/genderText"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="20sp"
+                android:paddingBottom="20dp"
+                android:text="Gender?" />
+
+            <TextView
+                android:id="@+id/ethnicityText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text="Ethnicity?" />
+            <TextView
+                android:id="@+id/precursorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:text="Do you have a history" />
+            <TextView
+                android:id="@+id/precursorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:text="with any of the following:" />
+            <TextView
+                android:id="@+id/asthmaText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text="Asthma?" />
+            <TextView
+                android:id="@+id/chronicLungDiseaseText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text="Chronic Lung Disease?" />
+            <TextView
+                android:id="@+id/immuneSuppressionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text="Suppressed Immune System?" />
+            <TextView
+                android:id="@+id/metabolicDiseaseText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text=" Any Metabolic Disease?" />
+            <TextView
+                android:id="@+id/neurologicDisease"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text="Neruologic Disease?" />
+            <TextView
+                android:id="@+id/autoImmuneDiseaseText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text="Any Auto-Immune Disease?" />
+            <TextView
+                android:id="@+id/renalDiseaseText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text="Any Renal Disease?" />
+            <TextView
+                android:id="@+id/gastroIntestinalDiseaseText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text="Gastro-Intestinal Disease?" />
+            <TextView
+                android:id="@+id/otherDiseaseText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text=" Any Other Disease?" />
+            <TextView
+                android:id="@+id/obesityText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text="Obesity?" />
+            <TextView
+                android:id="@+id/hypertensionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text="Hypertension?" />
+            <TextView
+                android:id="@+id/pregnancyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="20sp"
+                android:text="Are you Pregnant?" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/ageTextNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:paddingTop="20sp"
+                android:paddingBottom="16sp" />
+
+            <Spinner
+                android:id="@+id/genderSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/Gender"
+                android:paddingTop="20sp"
+                android:paddingBottom="17sp" />
+            <Spinner
+                android:id="@+id/ethnicitySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:entries = "@array/Ethnicity"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+            <TextView
+                android:id="@+id/pregnancyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20sp"
+                android:paddingBottom="39sp"
+                />
+            <Spinner
+                android:id="@+id/asthmaSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/YNU"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+            <Spinner
+                android:id="@+id/chronicLungDiseaseSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/YNU"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+            <Spinner
+                android:id="@+id/immuneSuppressionSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/YN"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+            <Spinner
+                android:id="@+id/metabolicDiseaseSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/YN"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+            <Spinner
+                android:id="@+id/neurologicDiseaseSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/YN"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+            <Spinner
+                android:id="@+id/autoImmuneDiseaseSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/YN"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+            <Spinner
+                android:id="@+id/renalDiseaseSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/YN"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+            <Spinner
+                android:id="@+id/gastroIntestinalDiseaseSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/YN"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+            <Spinner
+                android:id="@+id/otherDiseaseSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/YN"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+            <Spinner
+                android:id="@+id/obesitySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/YN"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+            <Spinner
+                android:id="@+id/hypertensionSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/YN"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+            <Spinner
+                android:id="@+id/pregnancySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries = "@array/YN"
+                android:paddingTop="20sp"
+                android:paddingBottom="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="OnClick">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Submit?"
+            android:onClick="Submit"/>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

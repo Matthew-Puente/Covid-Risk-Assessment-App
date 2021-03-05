@@ -5,12 +5,18 @@ import android.os.Bundle
 import android.content.Intent;
 import android.widget.Button
 import android.net.Uri;
+import android.view.View
+import android.widget.EditText
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val a_button = findViewById<Button>(R.id.button)
+        a_button.setOnClickListener {
+            setContentView(R.layout.patient_form)
+        }
         val b_button = findViewById<Button>(R.id.buttonB)
         b_button.setOnClickListener {
             val url = "https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html"
@@ -40,6 +46,9 @@ class MainActivity : AppCompatActivity() {
             intent.data = Uri.parse(url)
             startActivity(intent)
         }
+
+    }
+    fun Submit(view: View) {
 
 
     }

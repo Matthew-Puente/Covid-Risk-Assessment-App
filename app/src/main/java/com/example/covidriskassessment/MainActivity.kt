@@ -3,11 +3,14 @@ package com.example.covidriskassessment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent;
+import android.graphics.Color
 import android.widget.Button
 import android.net.Uri;
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         val a_button = findViewById<Button>(R.id.button)
         a_button.setOnClickListener {
             setContentView(R.layout.patient_form)
+            val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)   //<RecyclerView>(R.id.recyclerView)
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.adapter = MainAdapter()
         }
         val b_button = findViewById<Button>(R.id.buttonB)
         b_button.setOnClickListener {

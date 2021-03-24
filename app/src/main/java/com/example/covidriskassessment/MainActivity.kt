@@ -4,14 +4,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent;
 import android.widget.Button
-import android.net.Uri;
+import android.net.Uri
 import android.view.View
+import android.widget.EditText
+import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val a_button = findViewById<Button>(R.id.button)
+        val a_button = findViewById<Button>(R.id.buttonA)
         a_button.setOnClickListener {
             val intent = Intent(this, PatientFormActivity::class.java)
             startActivity(intent)

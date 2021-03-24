@@ -1,56 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:textAlignment="center"
+    android:textDirection="inherit"
+
+    android:weightSum="10"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="44dp"
-        android:text="A"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/buttonA"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="6"
+        android:background="@drawable/medical"
+        android:drawablePadding="0dp"
+        android:gravity="bottom|center"
+        android:paddingBottom="30dp"
+        android:text="Fill Out Form"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:backgroundTint="@null"></Button>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="4"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/buttonB"
-        android:layout_width="120dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="44dp"
-        android:text="B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <Button
-        android:id="@+id/buttonC"
-        android:layout_width="120dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="8dp"
-        android:text="C"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonD"
-        app:layout_constraintStart_toEndOf="@+id/buttonB"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Button
+                        android:id="@+id/buttonB"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="Covid Symptoms"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/white"></Button>
 
-    <Button
-        android:id="@+id/buttonD"
-        android:layout_width="120dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="2dp"
-        android:text="D"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+                    <Button
+                        android:id="@+id/buttonC"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="Vacination Locations"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/white"></Button>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <Button
+                        android:id="@+id/buttonD"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="Emergency Services"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/white"></Button>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

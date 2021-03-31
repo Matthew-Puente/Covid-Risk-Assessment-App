@@ -2,42 +2,38 @@ package com.example.covidriskassessment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.content.Intent;
+import android.content.Intent
 import android.widget.Button
 import android.net.Uri
 import android.view.View
-import android.widget.EditText
-import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val a_button = findViewById<Button>(R.id.buttonA)
-        a_button.setOnClickListener {
+        val findRiskButton = findViewById<Button>(R.id.findRiskButton)
+        findRiskButton.setOnClickListener {
             val intent = Intent(this, PatientFormActivity::class.java)
             startActivity(intent)
         }
-        val b_button = findViewById<Button>(R.id.buttonB)
-        b_button.setOnClickListener {
+        val symptomsButton = findViewById<Button>(R.id.symptomsButton)
+        symptomsButton.setOnClickListener {
             val url = "https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html"
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(url)
             startActivity(intent)
         }
 
-        val c_button = findViewById<Button>(R.id.buttonC)
-        c_button.setOnClickListener {
+        val locationsButton = findViewById<Button>(R.id.locationsButton)
+        locationsButton.setOnClickListener {
             val url = "https://www.vaccines.gov/get-vaccinated/where"
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(url)
             startActivity(intent)
         }
 
-        val d_button = findViewById<Button>(R.id.buttonD)
-        d_button.setOnClickListener {
+        val servicesButton = findViewById<Button>(R.id.servicesButton)
+        servicesButton.setOnClickListener {
             val url = "https://www.google.com/search?rlz=1C1CHBF_enUS879US879&tbm=lcl&sxsrf=ALeKk01" +
                     "2beU25ut_IBG6jJh-SWTGZZgASw%3A1614581578989&ei=So88YJzhO9Lv9AOewYvoAw&q=emerge" +
                     "ncy+hospital&oq=emergency+hospital&gs_l=psy-ab.3..0i433i67k1j0i263i20k1j0j0i7i" +

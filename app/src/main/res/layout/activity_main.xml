@@ -12,7 +12,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/buttonA"
+        android:id="@+id/findRiskButton"
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:layout_weight="6"
@@ -20,7 +20,7 @@
         android:drawablePadding="0dp"
         android:gravity="bottom|center"
         android:paddingBottom="30dp"
-        android:text="Fill Out Form"
+        android:text="@string/find_your_risk"
         android:textColor="@color/black"
         android:textSize="36sp"
         app:backgroundTint="@null"></Button>
@@ -45,37 +45,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <Button
-                        android:id="@+id/buttonB"
+                        android:id="@+id/symptomsButton"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:insetTop="0dp"
                         android:insetBottom="0dp"
-                        android:text="Covid Symptoms"
+                        android:text="@string/covid_symptoms"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         app:backgroundTint="@color/white"></Button>
 
                     <Button
-                        android:id="@+id/buttonC"
+                        android:id="@+id/locationsButton"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:insetTop="0dp"
                         android:insetBottom="0dp"
-                        android:text="Vacination Locations"
+                        android:text="@string/vaccination_locations"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         app:backgroundTint="@color/white"></Button>
 
                     <Button
-                        android:id="@+id/buttonD"
+                        android:id="@+id/servicesButton"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:insetTop="0dp"
                         android:insetBottom="0dp"
-                        android:text="Emergency Services"
+                        android:text="@string/emergency_services"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         app:backgroundTint="@color/white"></Button>

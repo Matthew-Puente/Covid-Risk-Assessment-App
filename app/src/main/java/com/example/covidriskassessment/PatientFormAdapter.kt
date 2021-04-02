@@ -8,7 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.row_item.view.*
 
 class MainAdapter:RecyclerView.Adapter<CustomViewHolder>(){
-    val Questions = listOf<String>("Age?", "Gender?", "Ethnicity", "Asthma?","Cardiovascular Disease?","Chronic Lung Disease?","Immune Suppression?","Metabolic Disease?","Neurologic Disease?","Auto-Immune Disease?","Liver Disease?","Obesity?","Pregnancy?","Hypertension?")
+    val Questions = listOf<String>("Age?", "Gender?", "Ethnicity", "Asthma?",
+                                    "Cardiovascular Disease?","Chronic Lung Disease?",
+                                    "Immune Suppression?","Metabolic Disease?","Neurologic Disease?",
+                                    "Auto-Immune Disease?","Liver Disease?","Obesity?","Pregnancy?",
+                                    "Hypertension?")
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val layoutInflater = LayoutInflater.from(parent?.context)
@@ -42,7 +46,7 @@ class MainAdapter:RecyclerView.Adapter<CustomViewHolder>(){
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val Question = Questions.get(position)
-        holder?.view?.textView2?.text = Question
+        holder?.view?.questionText?.text = Question
 
     }
 }

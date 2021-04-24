@@ -47,8 +47,4 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    fun Submit(view: View) {
-
-
-    }
 }

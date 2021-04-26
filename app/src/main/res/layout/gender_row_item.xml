@@ -7,8 +7,7 @@
     android:layout_height="wrap_content">
 
     <Spinner
-        android:entries = "@array/Gender"
-        android:id="@+id/spinner"
+        android:id="@+id/gender_spinner"
         android:layout_width="209dp"
         android:layout_height="58dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +19,7 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintEnd_toStartOf="@+id/gender_spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

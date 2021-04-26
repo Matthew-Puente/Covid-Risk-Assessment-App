@@ -16,7 +16,7 @@ class PatientFormActivity : AppCompatActivity() {
 
         patientRecyclerView = findViewById(R.id.recyclerView)
         patientRecyclerView.layoutManager = LinearLayoutManager(this)
-        patientRecyclerView.adapter = PatientFormAdapter()
+        patientRecyclerView.adapter = PatientFormAdapter(this)
 
     }
 

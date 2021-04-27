@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
 
 private val TAG = "ADAPTER"
@@ -27,15 +28,21 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
     inner class PatientHolder(itemView: View) : RecyclerView.ViewHolder(itemView), AdapterView.OnItemSelectedListener {
 
         val questionText: TextView = itemView.findViewById(R.id.questionText)
-
+        val ageResponse: EditText? = itemView.findViewById(R.id.ageEditText)
         val genderSpinner: Spinner? = itemView.findViewById(R.id.gender_spinner)
         val ethnicitySpinner: Spinner? = itemView.findViewById(R.id.ethnicity_spinner)
         val yesNoSpinners: Spinner? = itemView.findViewById(R.id.spinner)
+
 
         init {
             genderSpinner?.onItemSelectedListener = this
             ethnicitySpinner?.onItemSelectedListener = this
             yesNoSpinners?.onItemSelectedListener = this
+            // Bug when hitting arrow button more than once
+            ageResponse?.addTextChangedListener{
+                patientData.age = ageResponse.text.toString().toInt()
+                Log.d(TAG, patientData.age.toString())
+            }
         }
 
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -55,7 +62,6 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
                 12 -> patientData.pregnancy = answer
                 13 -> patientData.hyper = answer
             }
-            Log.d(TAG, answer + " " + adapterPosition)
         }
 
         override fun onNothingSelected(parent: AdapterView<*>?) {

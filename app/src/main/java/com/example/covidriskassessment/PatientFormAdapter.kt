@@ -66,6 +66,7 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
 
         override fun onNothingSelected(parent: AdapterView<*>?) {
             // Intentionally left blank
+
         }
     }
 

@@ -20,22 +20,22 @@ data class PatientData(var age:Int = -1,
 
     fun containsNull() : Boolean {
         if (age == -1) return true
-        if (gender == "") return true
-        if (ethnicity == "") return true
-        if (asthma == "") return true
-        if (cardio == "") return true
-        if (chronic == "") return true
-        if (imSuppresion == "") return true
-        if (metabolic == "") return true
-        if (neurologic == "") return true
-        if (autoImmune == "") return true
-        if (liver == "") return true
-        if (obesity == "") return true
-        if (pregnancy == "") return true
-        if (renal == "") return true
-        if (gastro == "") return true
-        if (hyper == "") return true
-        if (other == "") return true
+//        if (gender == "") return true
+//        if (ethnicity == "") return true
+//        if (asthma == "") return true
+//        if (cardio == "") return true
+//        if (chronic == "") return true
+//        if (imSuppresion == "") return true
+//        if (metabolic == "") return true
+//        if (neurologic == "") return true
+//        if (autoImmune == "") return true
+//        if (liver == "") return true
+//        if (obesity == "") return true
+//        if (pregnancy == "") return true
+//        if (renal == "") return true
+//        if (gastro == "") return true
+//        if (hyper == "") return true
+//        if (other == "") return true
         return false
     }
 }

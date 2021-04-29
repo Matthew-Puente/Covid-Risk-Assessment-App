@@ -18,7 +18,6 @@ class PatientFormActivity : AppCompatActivity() {
     private val patientData: PatientData = PatientData()
 
     // Possible Bug: Occasional removal of filled out spinner answer off screen
-    // Bug: Submit button covers other option
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_patient_form)

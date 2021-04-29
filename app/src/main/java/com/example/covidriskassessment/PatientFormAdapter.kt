@@ -14,29 +14,28 @@ private val TAG = "ADAPTER"
 class PatientFormAdapter(private val context: Context, val patientData: PatientData):
     RecyclerView.Adapter<PatientFormAdapter.PatientHolder>() {
 
+    // Need to be updated
     private val questions = listOf(
-        "Age?", "Gender?", "Ethnicity", "Asthma?",
+        "Age?", "Gender?", "In Patient?", "Asthma?",
         "Cardiovascular Disease?", "Chronic Lung Disease?",
         "Immune Suppression?", "Metabolic Disease?", "Neurologic Disease?",
         "Auto-Immune Disease?", "Liver Disease?", "Obesity?", "Pregnancy?",
-        "Hypertension?"
+        "Hypertension?", "15", "16", "17", "18"
     )
+
     private val genderAdapter = ArrayAdapter.createFromResource(context, R.array.Gender, android.R.layout.simple_spinner_item)
-    private val ethnicityAdapter = ArrayAdapter.createFromResource(context, R.array.Ethnicity, android.R.layout.simple_spinner_item)
-    private val yesNoAdapter = ArrayAdapter.createFromResource(context, R.array.YNU, android.R.layout.simple_spinner_item)
+    private val yesNoAdapter = ArrayAdapter.createFromResource(context, R.array.YN, android.R.layout.simple_spinner_item)
 
     inner class PatientHolder(itemView: View) : RecyclerView.ViewHolder(itemView), AdapterView.OnItemSelectedListener {
 
         val questionText: TextView = itemView.findViewById(R.id.questionText)
         val ageResponse: EditText? = itemView.findViewById(R.id.ageEditText)
         val genderSpinner: Spinner? = itemView.findViewById(R.id.gender_spinner)
-        val ethnicitySpinner: Spinner? = itemView.findViewById(R.id.ethnicity_spinner)
         val yesNoSpinners: Spinner? = itemView.findViewById(R.id.spinner)
 
 
         init {
             genderSpinner?.onItemSelectedListener = this
-            ethnicitySpinner?.onItemSelectedListener = this
             yesNoSpinners?.onItemSelectedListener = this
             // Bug when hitting arrow button more than once
             ageResponse?.addTextChangedListener{
@@ -48,19 +47,23 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             val answer = parent?.getItemAtPosition(position) as String
             when (adapterPosition) {
-                1 -> patientData.gender = answer
-                2 -> patientData.ethnicity = answer
-                3 -> patientData.asthma = answer
-                4 -> patientData.cardio = answer
-                5 -> patientData.chronic = answer
-                6 -> patientData.imSuppresion = answer
-                7 -> patientData.metabolic = answer
-                8 -> patientData.neurologic = answer
-                9 -> patientData.autoImmune = answer
-                10 -> patientData.liver = answer
-                11 -> patientData.obesity = answer
-                12 -> patientData.pregnancy = answer
-                13 -> patientData.hyper = answer
+                1 -> patientData.sex = if (answer == "Female") 1 else 2
+                2 -> patientData.patient_type = if (answer == "Outpatient") 1 else 2
+                3 -> patientData.asthma = if (answer == "Yes") 1 else 2
+                4 -> patientData.cardiovascular = if (answer == "Yes") 1 else 2
+                5 -> patientData.renal_chronic = if (answer == "yes") 1 else 2
+                6 -> patientData.inmsupr = if (answer == "Yes") 1 else 2
+                7 -> patientData.copd = if (answer == "Yes") 1 else 2
+                8 -> patientData.diabetes = if (answer == "Yes") 1 else 2
+                9 -> patientData.intubed = if (answer == "Yes") 1 else 2
+                10 -> patientData.tobacco = if (answer == "Yes") 1 else 2
+                11 -> patientData.obesity = if (answer == "Yes") 1 else 2
+                12 -> patientData.pregnancy = if (answer == "Yes") 1 else 2
+                13 -> patientData.hypertension = if (answer == "Yes") 1 else 2
+                14 -> patientData.contact_other_covid = if (answer == "Yes") 1 else 2
+                15 -> patientData.icu = if (answer == "Yes") 1 else 2
+                16 -> patientData.other_disease = if (answer == "Yes") 1 else 2
+                17 -> patientData.pneumonia = if (answer == "Yes") 1 else 2
             }
         }
 
@@ -75,8 +78,7 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         val view = when (viewType) {
             0 -> layoutInflater.inflate(R.layout.row_item, parent, false)
             1 -> layoutInflater.inflate(R.layout.age_row_item, parent, false)
-            2 -> layoutInflater.inflate(R.layout.gender_row_item, parent, false)
-            else -> layoutInflater.inflate(R.layout.ethnicity_row_item, parent, false)
+            else  -> layoutInflater.inflate(R.layout.gender_row_item, parent, false)
         }
         return PatientHolder(view)
     }
@@ -88,7 +90,6 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         return when(questions[position]) {
             "Age?" -> 1
             "Gender?" -> 2
-            "Ethnicity" -> 3
             else -> 0
         }
     }
@@ -97,7 +98,6 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         val question = questions[position]
         holder.questionText.text = question
         holder.genderSpinner?.adapter = genderAdapter
-        holder.ethnicitySpinner?.adapter = ethnicityAdapter
         holder.yesNoSpinners?.adapter = yesNoAdapter
 
     }

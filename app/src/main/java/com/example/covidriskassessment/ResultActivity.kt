@@ -15,12 +15,14 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
+        val patient = PatientData(5, 3, 1, 1, 3)
         val repository = Repository()
         val resultViewModelFactory = ResultViewModelFactory(repository)
         resultViewModel = ViewModelProvider(this, resultViewModelFactory).get(ResultViewModel::class.java)
-        resultViewModel.getResponse()
+        //resultViewModel.getResponse()
+        resultViewModel.postPatientData(patient)
         resultViewModel.myResponse.observe(this, Observer { response ->
-            Log.d("Response", response.id.toString())
+            Log.d("Response", response.sex.toString())
         })
     }
 }

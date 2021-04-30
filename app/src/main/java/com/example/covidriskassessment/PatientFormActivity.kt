@@ -1,12 +1,9 @@
 package com.example.covidriskassessment
 
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 

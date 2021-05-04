@@ -17,7 +17,7 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
 
     // Need to be updated
     private val questions = listOf(
-        "Age?", "Gender?", "In Patient?", "Asthma?",
+        "Please answer the following:", "Age?", "Gender?", "In Patient?", "Asthma?",
         "Cardiovascular Disease?", "Chronic Lung Disease?",
         "Immune Suppression?", "Metabolic Disease?", "Neurologic Disease?",
         "Auto-Immune Disease?", "Liver Disease?", "Obesity?", "Pregnancy?",
@@ -50,23 +50,23 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             val answer = parent?.getItemAtPosition(position) as String
             when (adapterPosition) {
-                1 -> patientData.sex = if (answer == "Female") 1 else if (answer == "Male") 2 else 0
-                2 -> patientData.patient_type = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                3 -> patientData.asthma = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                4 -> patientData.cardiovascular = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                5 -> patientData.renal_chronic = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                6 -> patientData.inmsupr = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                7 -> patientData.copd = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                8 -> patientData.diabetes = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                9 -> patientData.intubed = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                10 -> patientData.tobacco = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                11 -> patientData.obesity = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                12 -> patientData.pregnancy = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                13 -> patientData.hypertension = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                14 -> patientData.contact_other_covid = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                15 -> patientData.icu = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                16 -> patientData.other_disease = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                17 -> patientData.pneumonia = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                2 -> patientData.sex = if (answer == "Female") 1 else if (answer == "Male") 2 else 0
+                3 -> patientData.patient_type = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                4 -> patientData.asthma = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                5 -> patientData.cardiovascular = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                6 -> patientData.renal_chronic = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                7 -> patientData.inmsupr = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                8 -> patientData.copd = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                9 -> patientData.diabetes = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                10 -> patientData.intubed = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                11 -> patientData.tobacco = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                12 -> patientData.obesity = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                13 -> patientData.pregnancy = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                14 -> patientData.hypertension = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                15 -> patientData.contact_other_covid = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                16 -> patientData.icu = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                17 -> patientData.other_disease = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                18 -> patientData.pneumonia = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
             }
         }
 
@@ -78,9 +78,10 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PatientHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = when (viewType) {
-            0 -> layoutInflater.inflate(R.layout.row_item, parent, false)
             1 -> layoutInflater.inflate(R.layout.age_row_item, parent, false)
-            else  -> layoutInflater.inflate(R.layout.gender_row_item, parent, false)
+            2 -> layoutInflater.inflate(R.layout.gender_row_item, parent, false)
+            3 -> layoutInflater.inflate(R.layout.helper_row_item, parent, false)
+            else  -> layoutInflater.inflate(R.layout.row_item, parent, false)
         }
         return PatientHolder(view)
     }
@@ -91,6 +92,7 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         return when(questions[position]) {
             "Age?" -> 1
             "Gender?" -> 2
+            "Please answer the following:" -> 3
             else -> 0
         }
     }
@@ -98,7 +100,6 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
     override fun onBindViewHolder(holder: PatientHolder, position: Int) {
         val question = questions[position]
         holder.questionText.text = question
-
     }
 }
 

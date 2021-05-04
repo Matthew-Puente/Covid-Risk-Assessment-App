@@ -11,7 +11,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/findRiskButton"
+        android:id="@+id/predictButton"
         android:layout_width="10dp"
         android:layout_height="match_parent"
         android:layout_weight="6"
@@ -19,7 +19,7 @@
         android:drawablePadding="0dp"
         android:gravity="bottom|center"
         android:paddingBottom="30dp"
-        android:text="@string/find_patient_risk"
+        android:text="@string/predict_outcome"
         android:textColor="@color/black"
         android:textSize="36sp"
         app:backgroundTint="@null"></Button>

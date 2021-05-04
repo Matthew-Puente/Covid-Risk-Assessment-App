@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val findRiskButton = findViewById<Button>(R.id.findRiskButton)
-        findRiskButton.setOnClickListener {
+        val predictButton = findViewById<Button>(R.id.predictButton)
+        predictButton.setOnClickListener {
             val intent = Intent(this, PatientFormActivity::class.java)
             startActivity(intent)
         }

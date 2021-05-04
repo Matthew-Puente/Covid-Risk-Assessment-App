@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.covidriskassessment.model.PatientData
 
 class PatientFormActivity : AppCompatActivity() {
 
@@ -28,6 +29,7 @@ class PatientFormActivity : AppCompatActivity() {
         submitButton.setOnClickListener {
             if (!patientData.containsNull()) {
                 val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("patientData", patientData)
                 startActivity(intent)
                 finish()
             }

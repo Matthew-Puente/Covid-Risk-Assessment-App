@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
+import com.example.covidriskassessment.model.PatientData
 
 private val TAG = "ADAPTER"
 
@@ -47,29 +48,28 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             val answer = parent?.getItemAtPosition(position) as String
             when (adapterPosition) {
-                1 -> patientData.sex = if (answer == "Female") 1 else 2
-                2 -> patientData.patient_type = if (answer == "Outpatient") 1 else 2
-                3 -> patientData.asthma = if (answer == "Yes") 1 else 2
-                4 -> patientData.cardiovascular = if (answer == "Yes") 1 else 2
-                5 -> patientData.renal_chronic = if (answer == "yes") 1 else 2
-                6 -> patientData.inmsupr = if (answer == "Yes") 1 else 2
-                7 -> patientData.copd = if (answer == "Yes") 1 else 2
-                8 -> patientData.diabetes = if (answer == "Yes") 1 else 2
-                9 -> patientData.intubed = if (answer == "Yes") 1 else 2
-                10 -> patientData.tobacco = if (answer == "Yes") 1 else 2
-                11 -> patientData.obesity = if (answer == "Yes") 1 else 2
-                12 -> patientData.pregnancy = if (answer == "Yes") 1 else 2
-                13 -> patientData.hypertension = if (answer == "Yes") 1 else 2
-                14 -> patientData.contact_other_covid = if (answer == "Yes") 1 else 2
-                15 -> patientData.icu = if (answer == "Yes") 1 else 2
-                16 -> patientData.other_disease = if (answer == "Yes") 1 else 2
-                17 -> patientData.pneumonia = if (answer == "Yes") 1 else 2
+                1 -> patientData.sex = if (answer == "Female") 1 else if (answer == "Male") 2 else 0
+                2 -> patientData.patient_type = if (answer == "Outpatient") 1 else if (answer == "Inpatient") 2 else 0
+                3 -> patientData.asthma = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                4 -> patientData.cardiovascular = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                5 -> patientData.renal_chronic = if (answer == "yes") 1 else if (answer == "No") 2 else 0
+                6 -> patientData.inmsupr = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                7 -> patientData.copd = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                8 -> patientData.diabetes = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                9 -> patientData.intubed = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                10 -> patientData.tobacco = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                11 -> patientData.obesity = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                12 -> patientData.pregnancy = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                13 -> patientData.hypertension = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                14 -> patientData.contact_other_covid = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                15 -> patientData.icu = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                16 -> patientData.other_disease = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                17 -> patientData.pneumonia = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
             }
         }
 
         override fun onNothingSelected(parent: AdapterView<*>?) {
             // Intentionally left blank
-
         }
     }
 
@@ -83,7 +83,6 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         return PatientHolder(view)
     }
 
-    // # of items
     override fun getItemCount(): Int = questions.size
 
     override fun getItemViewType(position: Int): Int {

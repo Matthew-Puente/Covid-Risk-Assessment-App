@@ -19,7 +19,7 @@
         android:drawablePadding="0dp"
         android:gravity="bottom|center"
         android:paddingBottom="30dp"
-        android:text="@string/find_your_risk"
+        android:text="@string/find_patient_risk"
         android:textColor="@color/black"
         android:textSize="36sp"
         app:backgroundTint="@null"></Button>

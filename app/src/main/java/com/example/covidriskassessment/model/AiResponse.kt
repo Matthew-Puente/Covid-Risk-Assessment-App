@@ -1,5 +1,6 @@
 package com.example.covidriskassessment.model
 
+// This will change, waiting on AI team
 data class AiResponse( val id: String,
                        val name: String,
                        val sex: Int,

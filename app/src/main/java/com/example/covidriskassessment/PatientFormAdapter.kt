@@ -28,7 +28,7 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         val yesNoSpinners: Spinner? = itemView.findViewById(R.id.spinner)
         val patientTypeSpinner: Spinner? = itemView.findViewById(R.id.type_spinner)
 
-        // Seems to be bug that fills last spinner with previously answered question
+        // Seems to be bug that fill and unfill spinner answers randomly
         init {
             genderSpinner?.adapter = genderAdapter
             yesNoSpinners?.adapter = yesNoAdapter

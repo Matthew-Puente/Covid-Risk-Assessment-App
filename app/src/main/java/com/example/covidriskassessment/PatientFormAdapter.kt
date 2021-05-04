@@ -34,14 +34,16 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         val genderSpinner: Spinner? = itemView.findViewById(R.id.gender_spinner)
         val yesNoSpinners: Spinner? = itemView.findViewById(R.id.spinner)
 
-
+        // Seems to be bug that fills last spinner with previously answered question
         init {
+            genderSpinner?.adapter = genderAdapter
+            yesNoSpinners?.adapter = yesNoAdapter
             genderSpinner?.onItemSelectedListener = this
             yesNoSpinners?.onItemSelectedListener = this
+
             // Bug when hitting arrow button more than once
             ageResponse?.addTextChangedListener{
                 patientData.age = ageResponse.text.toString().toInt()
-                Log.d(TAG, patientData.age.toString())
             }
         }
 
@@ -49,10 +51,10 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
             val answer = parent?.getItemAtPosition(position) as String
             when (adapterPosition) {
                 1 -> patientData.sex = if (answer == "Female") 1 else if (answer == "Male") 2 else 0
-                2 -> patientData.patient_type = if (answer == "Outpatient") 1 else if (answer == "Inpatient") 2 else 0
+                2 -> patientData.patient_type = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
                 3 -> patientData.asthma = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
                 4 -> patientData.cardiovascular = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                5 -> patientData.renal_chronic = if (answer == "yes") 1 else if (answer == "No") 2 else 0
+                5 -> patientData.renal_chronic = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
                 6 -> patientData.inmsupr = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
                 7 -> patientData.copd = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
                 8 -> patientData.diabetes = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
@@ -96,8 +98,6 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
     override fun onBindViewHolder(holder: PatientHolder, position: Int) {
         val question = questions[position]
         holder.questionText.text = question
-        holder.genderSpinner?.adapter = genderAdapter
-        holder.yesNoSpinners?.adapter = yesNoAdapter
 
     }
 }

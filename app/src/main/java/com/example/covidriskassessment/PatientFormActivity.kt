@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covidriskassessment.model.PatientData
+import com.example.covidriskassessment.model.SpinnerItem
 
 class PatientFormActivity : AppCompatActivity() {
 
@@ -14,14 +15,27 @@ class PatientFormActivity : AppCompatActivity() {
     private lateinit var submitButton: Button
 
     private val patientData: PatientData = PatientData()
+    private val questions = listOf("Please answer the following:", "Age:", "Sex:",
+    "Patient type:", "Tobacco use:", "Currently in ICU:", "Placed on ventilator:",
+    "Known recent contact with other covid patient:",
+    "Is the patient known to have any of the following conditions?", "Immune Suppression:",
+    "COPD:", "Diabetes", "Kidney failure:", "Obesity:", "Pregnant:", "Hypertension:", "Asthma:",
+    "Cardiovascular disease:", "Pneumonia:", "Other:")
+
+    private var items = mutableListOf<SpinnerItem>()
+
+//    for (i in 0..19) {
+//        items.add(SpinnerItem(questions[i]))
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_patient_form)
 
+        initializeItems()
         patientRecyclerView = findViewById(R.id.recyclerView)
         patientRecyclerView.layoutManager = LinearLayoutManager(this)
-        patientRecyclerView.adapter = PatientFormAdapter(this, patientData)
+        patientRecyclerView.adapter = PatientFormAdapter(this, patientData, items)
 
         submitButton = findViewById(R.id.submitButton)
 
@@ -34,6 +48,12 @@ class PatientFormActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    fun initializeItems() {
+        for (i in 0 until questions.size) {
+            items.add(SpinnerItem(questions[i]))
+        }
     }
 
 }

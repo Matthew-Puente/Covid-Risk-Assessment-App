@@ -22,12 +22,12 @@
         <item>Patient type:</item>
         <item>Tobacco use:</item>
         <item>Currently in ICU:</item>
-        <item>Intubed:</item>
+        <item>Placed on ventilator:</item>
         <item>Known recent contact with other covid patient:</item>
         <item>Is the patient known to have any of the following conditions?</item>
         <item>Immune Suppression:</item>
         <item>COPD:</item>
-        <item>Diabetes</item>
+        <item>Diabetes:</item>
         <item>Kidney failure:</item>
         <item>Obesity:</item>
         <item>Pregnant:</item>

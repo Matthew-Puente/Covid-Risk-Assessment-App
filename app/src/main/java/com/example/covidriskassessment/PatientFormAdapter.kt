@@ -28,7 +28,9 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         val yesNoSpinners: Spinner? = itemView.findViewById(R.id.spinner)
         val patientTypeSpinner: Spinner? = itemView.findViewById(R.id.type_spinner)
 
-        // Seems to be bug that fill and unfill spinner answers randomly
+        // Seems to be bug that fills and unfills spinner answers randomly
+        // If autofilled, it will be initialized to 0 and not allow user to move
+        // to next page.
         init {
             genderSpinner?.adapter = genderAdapter
             yesNoSpinners?.adapter = yesNoAdapter

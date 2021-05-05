@@ -1,14 +1,4 @@
 package com.example.covidriskassessment.model
 
-// This will change, waiting on AI team
-data class AiResponse( val id: String,
-                       val name: String,
-                       val sex: Int,
-                       val patient_type: Int,
-                       val date_Of_Entry: String,
-                       val date_Of_First_Symptoms: String,
-                       val intubed: Int,
-                       val pneumonia: Int,
-                       val age: Int,
-                       val pregnancy: Int
+data class AiResponse( val outcome: Int
 )

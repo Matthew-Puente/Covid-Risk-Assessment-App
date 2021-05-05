@@ -1,11 +1,16 @@
 package com.example.covidriskassessment
 
 import android.content.Context
+import android.content.Context.INPUT_METHOD_SERVICE
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.content.ContextCompat.getSystemServiceName
+import androidx.core.content.getSystemService
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covidriskassessment.model.PatientData
@@ -37,10 +42,15 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
             yesNoSpinners?.onItemSelectedListener = this
             patientTypeSpinner?.onItemSelectedListener = this
 
-            // Bug when hitting arrow button more than once
-            ageResponse?.addTextChangedListener{
+            ageResponse?.setOnClickListener {
                 patientData.age = ageResponse.text.toString().toInt()
+                closeKeyboard(ageResponse)
             }
+        }
+
+        private fun closeKeyboard(view: View) {
+            val imm: InputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
         }
 
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -115,6 +125,7 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         }
     }
 }
+
 
 
 

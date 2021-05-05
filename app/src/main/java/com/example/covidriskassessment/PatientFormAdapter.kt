@@ -1,17 +1,12 @@
 package com.example.covidriskassessment
 
 import android.content.Context
-import android.content.Context.INPUT_METHOD_SERVICE
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.core.content.ContextCompat.getSystemServiceName
-import androidx.core.content.getSystemService
-import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covidriskassessment.model.PatientData
 import com.example.covidriskassessment.model.SpinnerItem
@@ -42,15 +37,12 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
             yesNoSpinners?.onItemSelectedListener = this
             patientTypeSpinner?.onItemSelectedListener = this
 
-            ageResponse?.setOnClickListener {
-                patientData.age = ageResponse.text.toString().toInt()
-                closeKeyboard(ageResponse)
+           ageResponse?.setOnClickListener {
+                if (ageResponse.text.toString() != "") {
+                    patientData.age = ageResponse.text.toString().toInt()
+                    closeKeyboard(ageResponse)
+                }
             }
-        }
-
-        private fun closeKeyboard(view: View) {
-            val imm: InputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(view.windowToken, 0)
         }
 
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -84,6 +76,12 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
             // Intentionally left blank
         }
     }
+
+    private fun closeKeyboard(view: View) {
+        val imm: InputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PatientHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

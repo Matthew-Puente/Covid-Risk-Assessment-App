@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.content.Intent
 import android.widget.Button
 import android.net.Uri
-import android.view.View
 
 class MainActivity : AppCompatActivity() {
 

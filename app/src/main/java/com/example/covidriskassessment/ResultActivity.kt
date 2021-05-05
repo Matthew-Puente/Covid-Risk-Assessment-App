@@ -34,19 +34,19 @@ class ResultActivity : AppCompatActivity() {
             resultImage.setImageResource(R.drawable.low_risk)
         }
 
-//        resultViewModel = ViewModelProvider(this, resultViewModelFactory).get(ResultViewModel::class.java)
-//
-//        if (patientData != null) {
-//            resultViewModel.postPatientData(patientData)
-//        }
-//
-//        resultViewModel.myResponse.observe(this, Observer { response ->
-//            if (response.isSuccessful) {
-//                Log.d("Response", response.body()?.age.toString())
-//                Log.d("Response", response.body()?.sex.toString())
-//            } else {
-//                Log.d("Response", response.errorBody().toString())
-//            }
-//        })
+        resultViewModel = ViewModelProvider(this, resultViewModelFactory).get(ResultViewModel::class.java)
+
+        if (patientData != null) {
+            resultViewModel.postPatientData(patientData)
+        }
+
+        resultViewModel.myResponse.observe(this, Observer { response ->
+            if (response.isSuccessful) {
+                Log.d("Response", response.body()?.age.toString())
+                Log.d("Response", response.body()?.sex.toString())
+            } else {
+                Log.d("Response", response.errorBody().toString())
+            }
+        })
     }
 }

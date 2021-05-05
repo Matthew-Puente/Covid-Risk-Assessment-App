@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covidriskassessment.model.PatientData
 import com.example.covidriskassessment.model.SpinnerItem
+import java.util.*
 
 class PatientFormActivity : AppCompatActivity() {
 
@@ -23,10 +24,6 @@ class PatientFormActivity : AppCompatActivity() {
     "Cardiovascular disease:", "Pneumonia:", "Other:")
 
     private var items = mutableListOf<SpinnerItem>()
-
-//    for (i in 0..19) {
-//        items.add(SpinnerItem(questions[i]))
-//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,13 +44,11 @@ class PatientFormActivity : AppCompatActivity() {
                 finish()
             }
         }
-
     }
 
-    fun initializeItems() {
-        for (i in 0 until questions.size) {
-            items.add(SpinnerItem(questions[i]))
+    private fun initializeItems() {
+        for (element in questions) {
+            items.add(SpinnerItem(element))
         }
     }
-
 }

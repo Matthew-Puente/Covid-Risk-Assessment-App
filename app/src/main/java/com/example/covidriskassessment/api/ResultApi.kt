@@ -1,4 +1,4 @@
-package com.example.covidriskassessment.Api
+package com.example.covidriskassessment.api
 
 import com.example.covidriskassessment.model.PatientData
 import retrofit2.Response

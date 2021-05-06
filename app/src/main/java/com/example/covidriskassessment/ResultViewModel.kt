@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.covidriskassessment.model.PatientData
-import com.example.covidriskassessment.Repository.Repository
+import com.example.covidriskassessment.repository.Repository
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

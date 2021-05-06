@@ -1,6 +1,6 @@
-package com.example.covidriskassessment.Repository
+package com.example.covidriskassessment.repository
 
-import com.example.covidriskassessment.Api.RetrofitInstance
+import com.example.covidriskassessment.api.RetrofitInstance
 import com.example.covidriskassessment.model.PatientData
 import retrofit2.Response
 

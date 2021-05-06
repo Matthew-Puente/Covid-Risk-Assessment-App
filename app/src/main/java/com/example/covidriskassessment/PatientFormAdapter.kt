@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.covidriskassessment.model.PatientData
 import com.example.covidriskassessment.model.SpinnerItem
 
-private val TAG = "ADAPTER"
+private const val TAG = "ADAPTER"
 
 class PatientFormAdapter(private val context: Context, val patientData: PatientData,
                          private val items: List<SpinnerItem>):

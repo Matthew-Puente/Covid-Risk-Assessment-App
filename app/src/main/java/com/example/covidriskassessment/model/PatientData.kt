@@ -40,8 +40,7 @@ data class PatientData(var sex:Int = 0,
             parcel.readInt(),
             parcel.readInt(),
             parcel.readInt(),
-            parcel.readInt()) {
-    }
+            parcel.readInt())
 
     fun containsNull() : Boolean {
         if (age == -1) return true

@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.covidriskassessment.model.PatientData
-import com.example.covidriskassessment.Repository.Repository
+import com.example.covidriskassessment.repository.Repository
 
 class ResultActivity : AppCompatActivity() {
 

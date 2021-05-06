@@ -1,4 +1,4 @@
-package com.example.covidriskassessment.Api
+package com.example.covidriskassessment.api
 
 import com.example.covidriskassessment.util.Constants.Companion.BASE_URL
 import retrofit2.Retrofit

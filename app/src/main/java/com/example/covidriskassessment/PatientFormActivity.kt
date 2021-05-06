@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covidriskassessment.model.PatientData
 import com.example.covidriskassessment.model.SpinnerItem
-import java.util.*
 
 class PatientFormActivity : AppCompatActivity() {
 
@@ -20,8 +19,8 @@ class PatientFormActivity : AppCompatActivity() {
     "Patient type:", "Tobacco use:", "Currently in ICU:", "Placed on ventilator:",
     "Known recent contact with other covid patient:",
     "Is the patient known to have any of the following conditions?", "Immune Suppression:",
-    "COPD:", "Diabetes", "Kidney failure:", "Obesity:", "Pregnant:", "Hypertension:", "Asthma:",
-    "Cardiovascular disease:", "Pneumonia:", "Other:")
+    "COPD:", "Diabetes", "Kidney failure:", "Obesity:", "Pregnant:", "Hypertension:",
+    "Asthma:", "Cardiovascular disease:", "Pneumonia:", "Other:")
 
     private var items = mutableListOf<SpinnerItem>()
 

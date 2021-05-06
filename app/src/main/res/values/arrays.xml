@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="Gender">
-        <item />
+        <item/>
         <item>Male</item>
         <item>Female</item>
     </string-array>
     <string-array name="YN">
-        <item />
+        <item/>
         <item>No</item>
         <item>Yes</item>
     </string-array>
     <string-array name="InOut">
-        <item />
+        <item/>
         <item>In-patient</item>
         <item>Out-patient</item>
     </string-array>

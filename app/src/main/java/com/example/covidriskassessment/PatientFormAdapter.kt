@@ -30,6 +30,9 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
         val patientTypeSpinner: Spinner? = itemView.findViewById(R.id.type_spinner)
 
         init {
+            genderAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
+            yesNoAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
+            patientTypeAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
             genderSpinner?.adapter = genderAdapter
             yesNoSpinners?.adapter = yesNoAdapter
             patientTypeSpinner?.adapter = patientTypeAdapter

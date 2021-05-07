@@ -20,7 +20,8 @@ data class PatientData(var sex:Int = 0,
                        var renal_chronic: Int = 0,
                        var tobacco: Int = 0,
                        var contact_other_covid: Int = 0,
-                       var icu: Int = 0
+                       var icu: Int = 0,
+                       var covid_res: Int = 0
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
             parcel.readInt(),
@@ -40,7 +41,9 @@ data class PatientData(var sex:Int = 0,
             parcel.readInt(),
             parcel.readInt(),
             parcel.readInt(),
-            parcel.readInt())
+            parcel.readInt(),
+            parcel.readInt()
+    )
 
     fun containsNull() : Boolean {
         if (age == -1) return true
@@ -61,6 +64,7 @@ data class PatientData(var sex:Int = 0,
         if (icu == 0) return true
         if (other_disease == 0) return true
         if (pneumonia == 0) return true
+        if (covid_res == 0) return true
         return false
     }
 
@@ -83,6 +87,7 @@ data class PatientData(var sex:Int = 0,
         parcel.writeInt(tobacco)
         parcel.writeInt(contact_other_covid)
         parcel.writeInt(icu)
+        parcel.writeInt(covid_res)
     }
 
     override fun describeContents(): Int {

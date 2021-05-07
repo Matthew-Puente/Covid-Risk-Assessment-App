@@ -70,7 +70,8 @@ class PatientFormAdapter(private val context: Context, val patientData: PatientD
                 16 -> patientData.asthma = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
                 17 -> patientData.cardiovascular = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
                 18 -> patientData.pneumonia = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
-                19 -> patientData.other_disease = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                19 -> patientData.covid_res = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
+                20 -> patientData.other_disease = if (answer == "Yes") 1 else if (answer == "No") 2 else 0
             }
             items[adapterPosition].position = position
         }

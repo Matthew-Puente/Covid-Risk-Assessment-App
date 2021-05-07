@@ -18,9 +18,9 @@ class PatientFormActivity : AppCompatActivity() {
     private val questions = listOf("Please answer the following:", "Age:", "Sex:",
     "Patient type:", "Tobacco use:", "Currently in ICU:", "Placed on ventilator:",
     "Known recent contact with other covid patient:",
-    "Is the patient known to have any of the following conditions?", "Immune Suppression:",
+    "Is the patient known to have any of the following conditions?", "Immune suppression:",
     "COPD:", "Diabetes", "Kidney failure:", "Obesity:", "Pregnant:", "Hypertension:",
-    "Asthma:", "Cardiovascular disease:", "Pneumonia:", "Other:")
+    "Asthma:", "Cardiovascular disease:", "Pneumonia:", "Resistance to covid:", "Other:")
 
     private var items = mutableListOf<SpinnerItem>()
 

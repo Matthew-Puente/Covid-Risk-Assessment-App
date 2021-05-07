@@ -11,11 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidRiskAssessment">
-        <activity android:name=".ResultActivity"></activity>
+        <activity
+            android:name=".ResultActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PatientFormActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
 package com.example.covidriskassessment.model
 
-data class AiResponse( val outcome: Int
+data class AiResponse( val probability: Int = -1
 )

@@ -7,4 +7,7 @@
     <string name="age_hint">Age</string>
     <string name="vaccination_locations">Vaccination Locations</string>
     <string name="emergency_services">Emergency Services</string>
+    <string name="low_risk_result">You or this patient are unlikely to suffer severe symptoms of Covid 19</string>
+    <string name="high_risk_result">You or this patient are likely to suffer severe symptoms of Covid 19</string>
+    <string name="four_o_four_error">404 Error: Please try again</string>
 </resources>

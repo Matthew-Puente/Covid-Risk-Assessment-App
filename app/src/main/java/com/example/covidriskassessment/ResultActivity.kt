@@ -25,14 +25,7 @@ class ResultActivity : AppCompatActivity() {
         val resultViewModelFactory = ResultViewModelFactory(repository)
 
         resultImage = findViewById(R.id.riskImage)
-        val result = 2
-
-        if (result == 1) {
-            resultImage.setImageResource(R.drawable.high_risk)
-        }
-        else {
-            resultImage.setImageResource(R.drawable.low_risk)
-        }
+        resultText = findViewById(R.id.resultText)
 
         resultViewModel = ViewModelProvider(this, resultViewModelFactory).get(ResultViewModel::class.java)
 
@@ -42,8 +35,21 @@ class ResultActivity : AppCompatActivity() {
 
         resultViewModel.myResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
-                Log.d("Response", response.body()?.age.toString())
-                Log.d("Response", response.body()?.sex.toString())
+                val result: Int? = response.body()
+                when (result) {
+                    1 -> {
+                        resultImage.setImageResource(R.drawable.high_risk)
+                        resultText.text = getString(R.string.high_risk_result)
+                    }
+                    0 -> {
+                        resultImage.setImageResource(R.drawable.low_risk)
+                        resultText.text = getString(R.string.low_risk_result)
+                    }
+                    else -> {
+                        resultText.text = getString(R.string.four_o_four_error)
+                    }
+                }
+                Log.d("Response", result.toString())
             } else {
                 Log.d("Response", response.errorBody().toString())
             }

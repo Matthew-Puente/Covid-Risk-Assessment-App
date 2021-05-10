@@ -11,9 +11,21 @@ With this app, you can
 
 ## Walkthrough
 
+### Homescreen
+![covid_home](https://user-images.githubusercontent.com/48270610/117702271-25e93180-b17d-11eb-806d-029c7f2adb11.PNG)
+
+
+### Input Form
+![form](https://user-images.githubusercontent.com/48270610/117702380-46b18700-b17d-11eb-8e52-474b91a6ae2f.PNG)
+
+
+### Results
+![result](https://user-images.githubusercontent.com/48270610/117702444-5d57de00-b17d-11eb-8958-3a783123e435.PNG)
+
+
+
 ## What We Learned
 
-- CardView
 - Spinners
 - Working with APIs
 - Adding images

@@ -1,5 +1,7 @@
 # Covid Risk Assessment App
 
+Note: The web service used in this application is no longer available. We are currently working on developing our own so that we may release this application on to the Play Store.
+
 ## Features
 
 With this app, you can

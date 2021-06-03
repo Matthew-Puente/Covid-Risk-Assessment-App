@@ -14,11 +14,12 @@ With this app, you can
 ## Walkthrough
 
 ### Homescreen
-![covid_home](https://user-images.githubusercontent.com/48270610/117702271-25e93180-b17d-11eb-806d-029c7f2adb11.PNG)
+![main](https://user-images.githubusercontent.com/48270610/120596592-ccc99200-c3f8-11eb-8e71-083160c52957.PNG)
 
 
 ### Input Form
-![form](https://user-images.githubusercontent.com/48270610/117702380-46b18700-b17d-11eb-8e52-474b91a6ae2f.PNG)
+
+![form](https://user-images.githubusercontent.com/48270610/120596678-e4087f80-c3f8-11eb-958d-4d6b47500e73.PNG)
 
 
 ### Results

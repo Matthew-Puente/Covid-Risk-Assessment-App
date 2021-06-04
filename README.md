@@ -1,6 +1,6 @@
 # Covid Risk Assessment App
 
-Note: The web service used in this application is no longer available. We are currently working on developing our own so that we may release this application on to the Play Store.
+Note: The web service originally used in this application is no longer available. We are currently working on rewiring the application to work with another API that we built (See https://github.com/Jtwoolbright/Covid-Risk-App-Api ). 
 
 ## Features
 

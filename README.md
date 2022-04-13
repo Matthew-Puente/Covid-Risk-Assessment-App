@@ -1,6 +1,6 @@
 # Covid Risk Assessment App
 
-Note: This repo contains code which relies on a web service which is no longer available.
+Note: This repo contains code which relies on a web service that is no longer available.
 
 ## Features
 

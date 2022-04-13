@@ -1,6 +1,6 @@
 # Covid Risk Assessment App
 
-Note: This repo contains the pre-production level version of application, using a web service that is no longer available. The production level version of this application is currently under review by the Google Play Store for release.
+Note: This repo contains code which relies on a web service which is no longer available.
 
 ## Features
 
